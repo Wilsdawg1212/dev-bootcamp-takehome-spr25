@@ -1,3 +1,91 @@
-/* Your Styles Here */
-body{
-}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #000000;
+    color: #bdb9b9;
+  }
+
+  .card-container {
+    perspective: 1000px;
+  }
+
+
+  .card:hover {
+    transform: rotateY(180deg);
+  }
+
+  .card-front,
+  .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+  }
+
+  .card-front {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+
+  }
+
+  .card-back {
+    background: linear-gradient(135deg, #642b73, #c6426e);
+    transform: rotateY(180deg); 
+  }
+
+  .profile-pic {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-image: url('images/my_picture.png'); 
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.5);
+  }
+
+  .info {
+    text-align: center;
+  }
+
+  .info h2 {
+    font-size: 24px;
+    margin: 10px 0;
+  }
+
+  .info p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  @media (min-width: 768px) {
+  .card {
+    width: 600px;
+    height: 400px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+    cursor: pointer;
+  }
+  }
+
+  @media (max-width: 768px) {
+  .card {
+    width: 300px;
+    height: 400px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+    cursor: pointer;
+  }
+  }
